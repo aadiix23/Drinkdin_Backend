@@ -1,4 +1,4 @@
-const {body,validationResult} =require("express-validator");
+import {body, validationResult} from "express-validator";
 
 const registerValidator=[
     body("fullname")
@@ -18,7 +18,7 @@ const registerValidator=[
     .notEmpty().withMessage("Email is Required"),
 
     body("password")
-    .ifbody("googleId").not().exists()
+    .if((value, { req }) => !req.body.googleId)
     .isLength({min:6}).withMessage("Password Must Be At Least 6 Characters")
     .notEmpty().withMessage("Password Is Required")
 ];
@@ -34,4 +34,4 @@ const validate=(req,res,next)=>{
     next();
 };
 
-module.exports ={registerValidator,validate};
+export {registerValidator, validate};

@@ -1,5 +1,4 @@
 import mongoose, { Schema } from "mongoose";
-const {body} = require("express-validator");
 
  const userSchema = new mongoose.Schema({
     fullname:{
