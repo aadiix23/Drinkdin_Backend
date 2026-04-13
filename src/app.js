@@ -6,6 +6,7 @@ import postroutes from "./modules/posts/post.routes.js";
 // Import models to ensure they are registered
 import "./modules/auth/auth.model.js";
 import "./modules/posts/posts.model.js";
+import feedRoutes from "./modules/feed/feed.routes.js";
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.json())
 
 app.use("/auth",authroutes);
 app.use("/post",postroutes);
+app.use("/feed", feedRoutes);
 
 //Health 
 app.get("/",(req,res) =>{
