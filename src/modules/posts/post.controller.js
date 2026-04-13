@@ -1,4 +1,4 @@
-import postService from "./post.service";
+import * as postService from "./post.service.js";
 
 export const createPost = async(req,res)=>{
     try {
@@ -10,11 +10,12 @@ export const createPost = async(req,res)=>{
     }
 }
 
-export const getAllPosts = async(req,res)=>{
+export const getAllPost = async(req,res)=>{
     try {
-        const post = await postService.getAllPosts();
+        const post = await postService.getAllPost();
         res.status(200).json({
             Success:true,
+            count:post.length,
             post
         })
     } catch (error) {
@@ -31,5 +32,3 @@ export const deletePost = async(req,res)=>{
         res.status(400).json({Success:false,Message:error.message})
     }
 }
-
-module.exports={createPost,getAllPosts,deletePost};
