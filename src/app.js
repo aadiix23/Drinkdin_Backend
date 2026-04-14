@@ -7,6 +7,9 @@ import postroutes from "./modules/posts/post.routes.js";
 import "./modules/auth/auth.model.js";
 import "./modules/posts/posts.model.js";
 import feedRoutes from "./modules/feed/feed.routes.js";
+import commentRoutes from "./modules/comments/comments.routes.js";
+
+
 
 const app = express();
 
@@ -19,6 +22,7 @@ app.use(express.json())
 app.use("/auth",authroutes);
 app.use("/post",postroutes);
 app.use("/feed", feedRoutes);
+app.use("/comments", commentRoutes);
 
 //Health 
 app.get("/",(req,res) =>{
