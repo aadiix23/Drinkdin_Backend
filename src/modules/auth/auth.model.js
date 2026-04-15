@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, Types } from "mongoose";
 
  const userSchema = new mongoose.Schema({
     fullname:{
@@ -29,7 +29,16 @@ import mongoose, { Schema } from "mongoose";
         required:function(){
             return !this.googleId;
         }
-    }
+    },
+    //followers Module
+    following:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'User'
+    }],
+    followers:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'User'
+    }]
  },{timestamps:true})
 
  export default mongoose.model("User",userSchema)

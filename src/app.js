@@ -8,6 +8,7 @@ import "./modules/auth/auth.model.js";
 import "./modules/posts/posts.model.js";
 import feedRoutes from "./modules/feed/feed.routes.js";
 import commentRoutes from "./modules/comments/comments.routes.js";
+import followRoutes from "./modules/follow/follow.routes.js";
 
 
 
@@ -23,6 +24,7 @@ app.use("/auth",authroutes);
 app.use("/post",postroutes);
 app.use("/feed", feedRoutes);
 app.use("/comments", commentRoutes);
+app.use("/follow",followRoutes);
 
 //Health 
 app.get("/",(req,res) =>{
