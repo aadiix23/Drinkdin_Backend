@@ -18,8 +18,8 @@ export const createPost = async(userId,data)=>{
 //get all post
  export const getAllPost = async(userId)=>{
     return await Post.find({ user: userId })
-    .populate("user","fullName")
-    .populate("likes","fullName")
+    .populate("user","fullname")
+    .populate("likes","fullname")
     .sort({createdAt:-1})
  }
 

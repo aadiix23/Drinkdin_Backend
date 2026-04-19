@@ -21,6 +21,6 @@ export const googlelogin = async(req,res)=>{
         const token = await authService.googleAuth(req.user);
         res.json({sucess:true,token})
     } catch (error) {
-        res.status(400).json({ message: err.message });
+        res.status(400).json({ message: error.message });
     }
 };
