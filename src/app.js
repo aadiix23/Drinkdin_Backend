@@ -9,6 +9,7 @@ import "./modules/posts/posts.model.js";
 import feedRoutes from "./modules/feed/feed.routes.js";
 import commentRoutes from "./modules/comments/comments.routes.js";
 import followRoutes from "./modules/follow/follow.routes.js";
+import leaderboardRoutes from "./modules/leaderboard/leaderboard.routes.js";
 
 
 
@@ -25,6 +26,7 @@ app.use("/post",postroutes);
 app.use("/feed", feedRoutes);
 app.use("/comments", commentRoutes);
 app.use("/follow",followRoutes);
+app.use("/leaderboard", leaderboardRoutes);
 
 //Health 
 app.get("/",(req,res) =>{
