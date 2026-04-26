@@ -21,6 +21,14 @@ import mongoose, { Schema, Types } from "mongoose";
         unique:true,
         trim:true,
     },
+    isVerified:{
+        type:Boolean,
+        default:false,
+    },
+    otp:{
+        type:String,
+        required:false,
+    },
     googleId:{
         type:String,
     },
